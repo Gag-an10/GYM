@@ -39,6 +39,15 @@ async function fetchProducts() {
     throw new Error('Invalid products response');
   }
 
+  if (!products.length) {
+    grid.innerHTML = `
+      <div class="empty" style="grid-column: 1 / -1; padding: 28px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface);">
+        No products match “${searchTerm || 'your current filters'}”. Try another search or switch categories.
+      </div>
+    `;
+    return;
+  }
+
   grid.innerHTML = products.map((p) => `
     <article class="card" id="${p.category}">
       <span class="tag">${p.category}</span>

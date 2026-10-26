@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IRONBASE — Gym Equipment, Supplements & Essentials</title>
+  <meta name="description" content="Shop gym equipment, supplements, and training essentials from Ironbase." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#top">IRON<span>BASE</span></a>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#supplements">Supplements</a>
+      <a href="#essentials">Essentials</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="cart-btn" id="openCart" type="button">
+      Cart <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Train. Fuel. Repeat.</p>
+        <h1>Gear that holds up. Supplements that show up.</h1>
+        <p class="lede">
+          Ironbase stocks the equipment, daily supplements, and small essentials
+          you actually use — built for home gyms, commercial floors, and early mornings.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#shop">Shop the floor</a>
+          <a class="btn ghost" href="#about">Why Ironbase</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <p>This week</p>
+        <strong>Creatine + lifting belt bundle</strong>
+        <span>Save $12 when you pair daily creatine with a 4" leather belt.</span>
+      </aside>
+    </section>
+
+    <section class="stats">
+      <div><strong>48h</strong><span>ship on in-stock gear</span></div>
+      <div><strong>3rd-party</strong><span>tested supplement brands</span></div>
+      <div><strong>30-day</strong><span>returns on unused items</span></div>
+    </section>
+
+    <section id="shop" class="shop">
+      <div class="section-head">
+        <h2>The floor</h2>
+        <div class="filters" role="tablist">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="equipment" type="button">Equipment</button>
+          <button class="filter" data-filter="supplements" type="button">Supplements</button>
+          <button class="filter" data-filter="essentials" type="button">Essentials</button>
+        </div>
+      </div>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>Built for people who train, not people who browse.</h2>
+      <p>
+        Ironbase is a focused shop: plates, bells, and benches that don’t wobble,
+        supplements with clear labels, and the straps, shakers, and bags that keep
+        a session moving. No mystery blends. No decorative junk.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>IRONBASE</strong>
+      <p>Equipment. Supplements. Essentials.</p>
+    </div>
+    <p>Demo storefront — checkout is local only and does not process payment.</p>
+  </footer>
+
+  <aside class="drawer" id="drawer" hidden>
+    <div class="drawer-head">
+      <h2>Your cart</h2>
+      <button id="closeCart" type="button" aria-label="Close cart">×</button>
+    </div>
+    <ul id="cartItems"></ul>
+    <p class="total">Total <span id="cartTotal">$0</span></p>
+    <button class="btn full" id="checkout" type="button">Checkout</button>
+  </aside>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

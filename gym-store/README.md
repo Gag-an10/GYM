@@ -2,7 +2,7 @@
 
 Static storefront for gym equipment, supplements, and essentials.
 
-Open `index.html` in a browser. Cart and checkout run in the browser only — no payments are processed.
+Open `index.html` in a browser. The profile, cart, demo order history, and recent searches are saved in that browser's local storage. This demo does not provide secure accounts, cross-device syncing, or payment processing.
 
 ## Connect to Git
 

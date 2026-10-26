@@ -23,6 +23,7 @@
     <button class="cart-btn" id="openCart" type="button">
       Cart <span id="cartCount">0</span>
     </button>
+    <button class="account-btn" id="openAccount" type="button">Account</button>
   </header>
 
   <main id="top">
@@ -62,7 +63,13 @@
           <button class="filter" data-filter="essentials" type="button">Essentials</button>
         </div>
       </div>
-      <div id="grid" class="grid"></div>
+      <form id="searchForm" class="search-form" role="search" autocomplete="off">
+        <label class="sr-only" for="productSearch">Search products</label>
+        <input id="productSearch" type="search" placeholder="Search equipment, supplements, essentials" aria-controls="grid" />
+        <button id="clearSearch" class="search-clear" type="button" aria-label="Clear search">×</button>
+        <div id="recentSearches" class="recent-searches" hidden></div>
+      </form>
+      <div id="grid" class="grid" aria-live="polite"></div>
     </section>
 
     <section id="about" class="about">
@@ -91,6 +98,25 @@
     <ul id="cartItems"></ul>
     <p class="total">Total <span id="cartTotal">$0</span></p>
     <button class="btn full" id="checkout" type="button">Checkout</button>
+  </aside>
+  <aside class="drawer account-drawer" id="accountDrawer" aria-labelledby="accountTitle" hidden>
+    <div class="drawer-head">
+      <h2 id="accountTitle">Your account</h2>
+      <button id="closeAccount" type="button" aria-label="Close account">×</button>
+    </div>
+    <p class="local-note">Your profile and demo order history are saved in this browser only.</p>
+    <form id="profileForm" class="profile-form">
+      <label for="profileName">Name</label>
+      <input id="profileName" name="name" autocomplete="name" required />
+      <label for="profileEmail">Email</label>
+      <input id="profileEmail" name="email" type="email" autocomplete="email" required />
+      <button class="btn full" type="submit">Save profile</button>
+      <p id="profileStatus" class="profile-status" role="status"></p>
+    </form>
+    <section class="order-section" aria-labelledby="ordersTitle">
+      <h3 id="ordersTitle">Previous demo orders</h3>
+      <div id="orderHistory" class="order-history"></div>
+    </section>
   </aside>
   <div class="backdrop" id="backdrop" hidden></div>
 
